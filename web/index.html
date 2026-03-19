@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgroScale Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div>
+        <h1>AgroScale Demo</h1>
+        <p>Simulador de báscula agrícola con lógica en C compilada a WebAssembly.</p>
+      </div>
+    </header>
+
+    <section class="layout">
+      <div class="card scale-card">
+        <h2>Báscula</h2>
+
+        <div class="scale-wrapper">
+          <div class="scale-machine" id="scaleMachine">
+            <div class="scale-display" id="scaleDisplay">0.00 kg</div>
+
+            <div class="scale-platform-wrap">
+              <div class="scale-platform" id="scalePlatform">
+                <div class="crate" id="crate">
+                  <div class="crate-label">AGRO</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stability-bar">
+              <div class="stability-fill" id="stabilityFill"></div>
+            </div>
+
+            <div class="scale-base"></div>
+          </div>
+        </div>
+
+        <div class="status-line">
+          <span class="status-pill status-idle" id="statusPill">En espera</span>
+        </div>
+      </div>
+
+      <div class="card controls-card">
+        <h2>Parámetros</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="peso">Peso base (kg)</label>
+            <input id="peso" type="number" value="52.3" step="0.1">
+          </div>
+
+          <div class="field">
+            <label for="offset">Offset calibración (kg)</label>
+            <input id="offset" type="number" value="0.1" step="0.1">
+          </div>
+
+          <div class="field">
+            <label for="ruido">Nivel ruido (kg)</label>
+            <input id="ruido" type="number" value="0.2" step="0.1" min="0">
+          </div>
+
+          <div class="field">
+            <label for="umbral">Umbral estabilidad (kg)</label>
+            <input id="umbral" type="number" value="0.5" step="0.1" min="0.1">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="btn" type="button">Tomar muestras</button>
+        </div>
+
+        <p class="helper-text">
+          Prueba con ruido alto para simular vibración o medición inestable.
+        </p>
+      </div>
+    </section>
+
+    <section class="results-layout">
+      <div class="card">
+        <h2>Muestras generadas</h2>
+        <ul id="muestras" class="samples-list"></ul>
+      </div>
+
+      <div class="card">
+        <h2>Resultado</h2>
+        <div class="result-box">
+          <p id="promedio">Promedio: --</p>
+          <p id="rango">Rango: --</p>
+          <p id="calibrado">Peso calibrado: --</p>
+          <p id="estado">Estado: --</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="../build/agroscale.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
