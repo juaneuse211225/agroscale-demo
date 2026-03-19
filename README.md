@@ -39,9 +39,3 @@ Requiere `emcc` (Emscripten) en PATH.
 ```bash
 make wasm
 ```
-
-## Nota para hoja de vida
-
-Puedes describir este proyecto como:
-
-> "Desarrollé un simulador de báscula agrícola con lógica en C compilada a WebAssembly, expuesto en una interfaz web interactiva y desplegado en GitHub Pages."
