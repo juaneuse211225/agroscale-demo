@@ -40,32 +40,6 @@ Requiere `emcc` (Emscripten) en PATH.
 make wasm
 ```
 
-## Preparar carpeta para GitHub Pages
-
-Si ya tienes `build/agroscale.js` y `build/agroscale.wasm`:
-
-```bash
-make pages
-```
-
-Esto genera/actualiza `docs/` con rutas correctas para Pages.
-
-## Publicar en GitHub Pages
-
-1. Sube el repositorio a GitHub.
-2. En GitHub: `Settings` -> `Pages`.
-3. En `Build and deployment`, selecciona:
-   - `Source`: `Deploy from a branch`
-   - `Branch`: `main`
-   - `Folder`: `/docs`
-4. Guarda cambios.
-
-URL esperada:
-
-```text
-https://<tu-usuario>.github.io/<tu-repo>/
-```
-
 ## Nota para hoja de vida
 
 Puedes describir este proyecto como:
